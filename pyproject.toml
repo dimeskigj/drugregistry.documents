@@ -10,6 +10,7 @@ dependencies = [
     "docling>=2.0.0",
     "torch",
     "torchvision",
+    "anthropic>=0.39.0",
 ]
 
 [[tool.uv.index]]
