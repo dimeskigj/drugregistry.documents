@@ -3,8 +3,11 @@ import os
 from pathlib import Path
 
 from anthropic import Anthropic
+from dotenv import load_dotenv
 
 # Configuration
+load_dotenv()
+
 PROJECT_ROOT = Path(__file__).parent.parent
 INPUT_DIR = PROJECT_ROOT / "documents" / "parsed"
 OUTPUT_DIR = PROJECT_ROOT / "documents" / "augmented"
