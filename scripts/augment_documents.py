@@ -67,7 +67,7 @@ def augment_document(content: str, api_key: str) -> str:
     
     message = client.messages.create(
         model="claude-3-5-sonnet-20241022",
-        max_tokens=16000,
+        max_tokens=8192,  # Conservative limit to avoid API errors
         temperature=0,
         system=AUGMENTATION_PROMPT,
         messages=[
@@ -77,6 +77,10 @@ def augment_document(content: str, api_key: str) -> str:
             }
         ]
     )
+    
+    # Validate response
+    if not message.content or len(message.content) == 0:
+        raise ValueError("API returned empty response")
     
     return message.content[0].text
 
