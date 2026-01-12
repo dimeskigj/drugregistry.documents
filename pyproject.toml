@@ -10,6 +10,7 @@ dependencies = [
     "docling>=2.0.0",
     "torch",
     "torchvision",
+    "google-genai",
 ]
 
 [[tool.uv.index]]
